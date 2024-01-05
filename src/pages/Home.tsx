@@ -1,35 +1,47 @@
 import { Button } from "@/components/ui/button"
 import { CardHeader, CardContent, Card } from "@/components/ui/card"
 import { Link, NavLink } from 'react-router-dom';
+import logo from "@/assets/company-logo.png"
+import React from "react";
 
+export function Header(): React.ReactElement {
+  return (
+    <header className="flex items-center justify-between px-4 py-2 bg-white shadow">
+      <Link to="#">
+        <img alt="Crunchyroll" className="h-8" src={logo} />
+        <span className="sr-only">Procut</span>
+      </Link>
+      <nav className="space-x-4">
+        <Link className="text-lg font-medium hover:underline" to="#">
+          Home
+        </Link>
+        <Link className="text-lg font-medium hover:underline" to="#">
+          Trending
+        </Link>
+        <Link className="text-lg font-medium hover:underline" to="#">
+          Popular
+        </Link>
+        <Link className="text-lg font-medium hover:underline" to="#">
+          Latest
+        </Link>
+      </nav>
+      <div className="flex items-center space-x-4">
+        <Link to='/signin'>
+          <Button variant="outline">Sigin</Button>
+        </Link>
+        <Link to='/sigin'>
+          <Button>Signout</Button> 
+        </Link>
+      </div>
+    </header>
+  )
 
-export default function Component() {
+}
+
+export default function Home() {
   return (
     <>
-      <header className="flex items-center justify-between px-4 py-2 bg-white shadow">
-        <Link to="#">
-          {/* <CitrusIcon className="h-8 w-8" /> */}
-          <span className="sr-only">Crunchyroll</span>
-        </Link>
-        <nav className="space-x-4">
-          <Link className="text-sm font-medium hover:underline" to="#">
-            Home
-          </Link>
-          <Link className="text-sm font-medium hover:underline" to="#">
-            Trending
-          </Link>
-          <Link className="text-sm font-medium hover:underline" to="#">
-            Popular
-          </Link>
-          <Link className="text-sm font-medium hover:underline" to="#">
-            Latest
-          </Link>
-        </nav>
-        <div className="flex items-center space-x-4">
-          <Button variant="outline">Sign In</Button>
-          <Button>Sign Up</Button>
-        </div>
-      </header>
+      <Header />
       <main className="mt-4">
         <section className="p-4">
           <h2 className="text-xl font-bold">Latest Releases</h2>
@@ -37,7 +49,7 @@ export default function Component() {
             <Card>
               <CardHeader>
                 <img
-                  alt="Anime Title"
+                  alt="Product Card"
                   className="w-full h-40 object-cover"
                   height="200"
                   src="/placeholder.svg"
@@ -49,7 +61,7 @@ export default function Component() {
                 />
               </CardHeader>
               <CardContent className="p-2">
-                <h3 className="text-lg font-semibold">Anime Title</h3>
+                <h3 className="text-lg font-semibold">Product Card</h3>
               </CardContent>
             </Card>
           </div>
@@ -58,12 +70,12 @@ export default function Component() {
           </Button>
         </section>
         <section className="p-4">
-          <h2 className="text-xl font-bold">Popular Series</h2>
+          <h2 className="text-xl font-bold">Popular Products</h2>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-4">
             <Card>
               <CardHeader>
                 <img
-                  alt="Anime Title"
+                  alt="Product Card"
                   className="w-full h-40 object-cover"
                   height="200"
                   src="/placeholder.svg"
@@ -75,7 +87,7 @@ export default function Component() {
                 />
               </CardHeader>
               <CardContent className="p-2">
-                <h3 className="text-lg font-semibold">Anime Title</h3>
+                <h3 className="text-lg font-semibold">Product Card</h3>
               </CardContent>
             </Card>
           </div>
